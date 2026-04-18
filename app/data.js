@@ -1,0 +1,93 @@
+// app/data.js
+export const HERO_SLIDES = [
+  { img: "/hero-1.jpg", label: "Merzouga · Erg Chebbi caravan" },
+  { img: "/hero-2.jpg", label: "Chefchaouen · The Blue Pearl" },
+  { img: "/hero-3.jpg", label: "Draa Valley · Desert at dusk" },
+  { img: "/hero-4.jpg", label: "Sahara · Dune ridges at sunset" }
+];
+
+export const DESTINATIONS = [
+  {
+    id: "marrakech", num: "01", name: "Marrakech", tagline: "The Red City",
+    heading: "The pulse of the souk, at dusk.",
+    lede: "Winding through the labyrinth of the medina, past stalls spilling with saffron and silver, Marrakech reveals itself in layers — a city where riads hide ornate courtyards behind unassuming doors, and every lantern tells a story.",
+    img: "https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=1400&q=80",
+    badge: "Heritage", days: "5 days", price: "1,290",
+    highlights: [
+      { t: "Jemaa el-Fnaa", s: "Night market & gastronomy" },
+      { t: "Majorelle Garden", s: "Yves Saint Laurent legacy" },
+      { t: "Private Riad Stay", s: "Hand-selected courtyards" },
+      { t: "Bahia Palace", s: "Moorish architecture tour" }
+    ]
+  },
+  {
+    id: "ouarzazate", num: "02", name: "Ouarzazate", tagline: "Gateway to the Sahara",
+    heading: "Where cinema meets the desert wind.",
+    lede: "Beyond the Atlas peaks lies Ouarzazate — a fortress-town of ochre earth and infinite horizons. Walk the ramparts of Aït Benhaddou, ride beyond the last dune, and sleep beneath a sky thick with stars.",
+    img: "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?auto=format&fit=crop&w=1400&q=80",
+    badge: "Desert", days: "7 days", price: "1,680",
+    highlights: [
+      { t: "Aït Benhaddou", s: "UNESCO earthen ksar" },
+      { t: "Erg Chebbi Dunes", s: "Sunrise camel expedition" },
+      { t: "Luxury Desert Camp", s: "Canopy beds under stars" },
+      { t: "Atlas Studios", s: "Backlot film tour" }
+    ]
+  },
+  {
+    id: "fez", num: "03", name: "Fez", tagline: "Imperial Soul",
+    heading: "A medieval city, living still.",
+    lede: "Fez el-Bali has been continuously inhabited for over twelve centuries. Its tanneries, madrasas and green-tiled minarets remain largely untouched — a place where the craft of bookbinding, brass and blue pottery is passed down as quietly as a whispered prayer.",
+    img: "https://images.unsplash.com/photo-1577535387542-3c13cf20e40e?auto=format&fit=crop&w=1400&q=80",
+    badge: "Culture", days: "4 days", price: "1,140",
+    highlights: [
+      { t: "Chouara Tanneries", s: "Private rooftop viewing" },
+      { t: "Al-Attarine Madrasa", s: "Marinid masterpiece" },
+      { t: "Artisan Workshops", s: "Zellige, brass, leather" },
+      { t: "Bab Boujloud", s: "Blue gate of the medina" }
+    ]
+  },
+  {
+    id: "tangier", num: "04", name: "Tangier", tagline: "Where Two Seas Meet",
+    heading: "The Mediterranean's literary port.",
+    lede: "Perched at the tip of Africa, Tangier has long drawn painters, writers and wanderers. Cafés overlook the strait; whitewashed kasbahs tumble to a sapphire sea. A city of fading glamour, renewed.",
+    img: "https://images.unsplash.com/photo-1553603227-2358aabe821e?auto=format&fit=crop&w=1400&q=80",
+    badge: "Coastal", days: "3 days", price: "890",
+    highlights: [
+      { t: "Café Hafa", s: "Sunset over the strait" },
+      { t: "Kasbah Museum", s: "Andalusian gardens" },
+      { t: "Cap Spartel", s: "Atlantic–Mediterranean point" },
+      { t: "Grand Socco", s: "Historic market quarter" }
+    ]
+  },
+  {
+    id: "agadir", num: "05", name: "Agadir", tagline: "Atlantic Shore",
+    heading: "Sun, surf, and southern ease.",
+    lede: "Agadir's crescent bay runs for ten golden kilometres. Beyond the beach, the Souss valley hides argan groves tended by women's cooperatives, flamingo lagoons, and the Anti-Atlas foothills — a slower rhythm of Morocco.",
+    img: "https://images.unsplash.com/photo-1566288623394-377af472d81b?auto=format&fit=crop&w=1400&q=80",
+    badge: "Seaside", days: "5 days", price: "1,220",
+    highlights: [
+      { t: "Taghazout Surf", s: "Morocco's famed breaks" },
+      { t: "Argan Cooperative", s: "Women-led heritage" },
+      { t: "Souss-Massa Park", s: "Flamingos & ibis" },
+      { t: "Paradise Valley", s: "Palm oasis hike" }
+    ]
+  }
+];
+
+export const PACKAGES = [
+  { id: 1, cat: "Signature", title: "The Imperial Cities", route: "Casablanca · Rabat · Fez · Marrakech", duration: "10 Days", price: "2,480", rating: 4.9, reviews: 214, img: "https://images.unsplash.com/photo-1489493585363-d69421e0edd3?auto=format&fit=crop&w=900&q=80", desc: "A ten-day odyssey through Morocco's four imperial capitals, staying in hand-picked riads and palaces." },
+  { id: 2, cat: "Desert", title: "Sahara by Moonlight", route: "Marrakech · Ouarzazate · Merzouga", duration: "7 Days", price: "1,890", rating: 5.0, reviews: 186, img: "https://images.unsplash.com/photo-1548018560-c7196548e84d?auto=format&fit=crop&w=900&q=80", desc: "Cross the High Atlas to a private luxury camp on Erg Chebbi. Camel caravans, Berber kitchens, astral silence." },
+  { id: 3, cat: "Coastal", title: "Atlantic Coast Escape", route: "Casablanca · Essaouira · Agadir", duration: "6 Days", price: "1,540", rating: 4.8, reviews: 97, img: "https://images.unsplash.com/photo-1591389703635-e15a07b842d7?auto=format&fit=crop&w=900&q=80", desc: "Fresh sardines on the harbour, wind-swept ramparts, and a private gulet through Essaouira's fishing fleet." },
+  { id: 4, cat: "Mountains", title: "High Atlas Retreat", route: "Marrakech · Imlil · Toubkal", duration: "5 Days", price: "1,320", rating: 4.9, reviews: 142, img: "https://images.unsplash.com/photo-1528657249085-893be9ffd04f?auto=format&fit=crop&w=900&q=80", desc: "Trek to Berber villages, share mint tea with mountain families, and summit North Africa's highest peak." },
+  { id: 5, cat: "Signature", title: "Marrakech in Private", route: "Marrakech & Ourika Valley", duration: "4 Days", price: "1,080", rating: 4.9, reviews: 311, img: "https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=900&q=80", desc: "A curated weekend of hammams, rooftop dinners, hidden riad gardens, and a private guide through the medina." },
+  { id: 6, cat: "Culture", title: "Artisan's Morocco", route: "Fez · Meknes · Chefchaouen", duration: "8 Days", price: "2,120", rating: 5.0, reviews: 76, img: "https://images.unsplash.com/photo-1577535387542-3c13cf20e40e?auto=format&fit=crop&w=900&q=80", desc: "Intimate access to master craftsmen: zellige tile, cedar carving, indigo dyeing. Small groups only." },
+  { id: 7, cat: "Desert", title: "Erg Chigaga Expedition", route: "Zagora · M'Hamid · Erg Chigaga", duration: "6 Days", price: "1,720", rating: 4.9, reviews: 58, img: "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?auto=format&fit=crop&w=900&q=80", desc: "Morocco's most remote dunes, reached only by 4x4. Nomadic encampments, oasis villages, and an unfiltered Sahara." },
+  { id: 8, cat: "Coastal", title: "Essaouira Weekend", route: "Marrakech · Essaouira", duration: "3 Days", price: "740", rating: 4.8, reviews: 204, img: "https://images.unsplash.com/photo-1553603227-2358aabe821e?auto=format&fit=crop&w=900&q=80", desc: "A fortified port, Atlantic winds, gnawa music, and the freshest fish you'll eat all year." },
+  { id: 9, cat: "Mountains", title: "Ourika Valley Escape", route: "Marrakech · Ourika · Setti Fatma", duration: "3 Days", price: "640", rating: 4.7, reviews: 89, img: "https://images.unsplash.com/photo-1539020140153-e479b8c64e9d?auto=format&fit=crop&w=900&q=80", desc: "Day-hikes to seven waterfalls, lunches in Berber homes, and saffron cultivation in the foothills." }
+];
+
+export const TESTIMONIALS = [
+  { quote: "Our guide didn't just show us Morocco — he opened doors, quite literally, into riads and workshops we'd have never found. Every dinner, every detour felt <em>authored</em>, not arranged.", name: "Elena & Marc Dufresne", loc: "Paris, France", avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80", img: "https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=1000&q=80" },
+  { quote: "The desert camp exceeded every expectation. Canopy beds, a private chef cooking tagine over coals, and a silence I haven't heard anywhere else in the world. <em>Unforgettable.</em>", name: "Hiroshi Tanaka", loc: "Tokyo, Japan", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80", img: "https://images.unsplash.com/photo-1548018560-c7196548e84d?auto=format&fit=crop&w=1000&q=80" },
+  { quote: "From airport to airport, flawless. They remembered my wife's birthday and surprised us in the middle of the Sahara with rose petals and a cellist. <em>How?</em>", name: "James Whitfield", loc: "London, UK", avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80", img: "https://images.unsplash.com/photo-1528657249085-893be9ffd04f?auto=format&fit=crop&w=1000&q=80" }
+];
