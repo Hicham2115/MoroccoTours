@@ -1,16 +1,17 @@
 // app/components/Packages.jsx
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { PACKAGES } from '../data';
-import { Icon } from './Icons';
+import { useState } from "react";
+import { PACKAGES } from "../data";
+import { Icon } from "./Icons";
 
 export default function Packages() {
-  const cats = ['All', 'Signature', 'Desert', 'Coastal', 'Mountains', 'Culture'];
-  const [filter, setFilter] = useState('All');
+  const cats = ["All", "Desert", "Mountains"];
+  const [filter, setFilter] = useState("All");
   const [favs, setFavs] = useState({});
 
-  const filtered = filter === 'All' ? PACKAGES : PACKAGES.filter((p) => p.cat === filter);
+  const filtered =
+    filter === "All" ? PACKAGES : PACKAGES.filter((p) => p.cat === filter);
 
   return (
     <section className="packages" id="packages">
@@ -18,11 +19,14 @@ export default function Packages() {
         <div className="section-head reveal">
           <div className="left">
             <span className="eyebrow">Curated Experiences</span>
-            <h2 className="display">Journeys, <em>authored.</em></h2>
+            <h2 className="display">
+              Journeys, <em>authored.</em>
+            </h2>
           </div>
           <p className="right">
-            Every itinerary is a private commission: hand-picked riads, master guides,
-            and access reserved for our travellers alone. Begin with one of these, or we&apos;ll design yours.
+            Every itinerary is a private commission: hand-picked riads, master
+            guides, and access reserved for our travellers alone. Begin with one
+            of these, or we&apos;ll design yours.
           </p>
         </div>
 
@@ -30,7 +34,7 @@ export default function Packages() {
           {cats.map((c) => (
             <button
               key={c}
-              className={'pkg-filter ' + (filter === c ? 'active' : '')}
+              className={"pkg-filter " + (filter === c ? "active" : "")}
               onClick={() => setFilter(c)}
             >
               {c}
@@ -45,7 +49,7 @@ export default function Packages() {
                 <img src={p.img} alt={p.title} />
                 <div className="duration">{p.duration}</div>
                 <button
-                  className={'fav ' + (favs[p.id] ? 'active' : '')}
+                  className={"fav " + (favs[p.id] ? "active" : "")}
                   onClick={(e) => {
                     e.stopPropagation();
                     setFavs({ ...favs, [p.id]: !favs[p.id] });
@@ -65,7 +69,10 @@ export default function Packages() {
                     <strong>{p.rating.toFixed(1)}</strong>
                     <span className="count">({p.reviews})</span>
                   </div>
-                  <div className="price">€{p.price}<small> / pp</small></div>
+                  <div className="price">
+                    €{p.price}
+                    <small> / pp</small>
+                  </div>
                 </div>
               </div>
             </article>
