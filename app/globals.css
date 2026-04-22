@@ -1558,7 +1558,15 @@ section {
   }
 }
 
+/* Utility: hide on small screens */
+.hide-sm {
+  display: inline-block;
+}
+
 @media (max-width: 720px) {
+  .hide-sm {
+    display: none !important;
+  }
   .container {
     padding: 0 24px;
   }
