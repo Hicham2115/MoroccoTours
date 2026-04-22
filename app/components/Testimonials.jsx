@@ -17,9 +17,13 @@ export default function Testimonials() {
       <div className="container tt-wrap">
         <div className="section-head reveal">
           <div className="left">
-            <span className="eyebrow">Guest Letters</span>
-            <h2 className="display">What they&apos;ve <em>written home.</em></h2>
+            <span className="eyebrow">Real Guest Stories · Verified Reviews</span>
+            <h2 className="display">Words from <em>those who returned.</em></h2>
           </div>
+          <p className="right" style={{ alignSelf: 'flex-end' }}>
+            Over 12,000 travellers have trusted us with Morocco. These are a few of the stories
+            they brought home — in their own words, unchanged.
+          </p>
         </div>
 
         <div className="tt-grid" key={i}>

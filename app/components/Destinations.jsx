@@ -14,12 +14,13 @@ export default function Destinations() {
       <div className="container">
         <div className="section-head reveal">
           <div className="left">
-            <span className="eyebrow">The Five Jewels</span>
-            <h2 className="display">Five cities, <em>five rhythms.</em></h2>
+            <span className="eyebrow">Morocco Destinations</span>
+            <h2 className="display">Five cities, <em>five worlds.</em></h2>
           </div>
           <p className="right">
-            From the red clay of Marrakech to the Atlantic breeze of Agadir, each destination
-            is more than a stop — it&apos;s a chapter, curated with local guides who live the place.
+            From the imperial medinas of Marrakech and Fez to the Sahara desert gateway of Ouarzazate,
+            the literary port of Tangier, and the Atlantic shores of Agadir — each destination is a private
+            chapter, guided by locals who have lived it their entire lives.
           </p>
         </div>
 
@@ -70,7 +71,7 @@ export default function Destinations() {
                 <div className="from">From</div>
                 <div className="price">€{d.price}<small>/ person</small></div>
               </div>
-              <a href="#contact" className="btn">Design this journey <Icon.Arrow className="arrow" /></a>
+              <a href="#contact" className="btn">Design This Journey <Icon.Arrow className="arrow" /></a>
             </div>
           </div>
         </div>

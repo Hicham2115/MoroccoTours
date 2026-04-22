@@ -45,7 +45,7 @@ export default function Nav() {
 
           <div className="nav-cta">
             <div className="nav-lang">
-              {['EN', 'FR', 'AR'].map((l, i) => (
+              {['EN', 'FR'].map((l, i) => (
                 <Fragment key={l}>
                   {i > 0 && <span className="divider" />}
                   <span className={lang === l ? 'active' : ''} onClick={() => setLang(l)}>{l}</span>

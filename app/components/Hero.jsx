@@ -28,22 +28,23 @@ export default function Hero() {
       <div className="hero-inner">
         <div className="container hero-grid">
           <div>
-            <span className="eyebrow">Curated Journeys · Since 2008</span>
-            <h1 className="display">Morocco, <em>as she was meant</em> to be seen.</h1>
+            <span className="eyebrow">Private Morocco Tours · Expert-Crafted</span>
+            <h1 className="display">Morocco tours <em>crafted for those</em> who seek more.</h1>
             <p className="hero-lede">
-              Private tours through the imperial cities, the High Atlas and the deep Sahara —
-              designed for travellers who prefer their doors opened quietly, and their moments kept.
+              From the saffron-scented souks of Marrakech to the star-blanketed silence of the Sahara desert,
+              we design private Morocco tours for travellers who want every door opened, every moment considered,
+              and every memory earned — not purchased off a shelf.
             </p>
             <div className="hero-cta">
-              <a href="#destinations" className="btn">Explore Destinations <Icon.Arrow className="arrow" /></a>
-              <a href="#packages" className="btn ghost">View Journeys</a>
+              <a href="#contact" className="btn">Plan My Journey <Icon.Arrow className="arrow" /></a>
+              <a href="#packages" className="btn ghost">Explore Tours</a>
             </div>
           </div>
 
           <div className="hero-meta">
-            <div className="stat"><div className="num">18</div><div className="label">Years of craft</div></div>
-            <div className="stat"><div className="num">42</div><div className="label">Curated journeys</div></div>
-            <div className="stat"><div className="num">4.9</div><div className="label">Guest rating</div></div>
+            <div className="stat"><div className="num">18</div><div className="label">Years of expert craft</div></div>
+            <div className="stat"><div className="num">12k+</div><div className="label">Guests guided</div></div>
+            <div className="stat"><div className="num">4.9</div><div className="label">★ Verified rating</div></div>
           </div>
         </div>
       </div>

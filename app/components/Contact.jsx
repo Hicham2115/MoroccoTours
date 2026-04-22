@@ -35,11 +35,13 @@ export default function Contact() {
     <section className="contact" id="contact">
       <div className="container contact-grid">
         <div className="contact-left reveal">
-          <span className="eyebrow">Begin the Conversation</span>
-          <h2 className="display">Let&apos;s <em>design</em> your Morocco.</h2>
+          <span className="eyebrow">Design Your Morocco</span>
+          <h2 className="display">Every great journey <em>begins with a conversation.</em></h2>
           <p>
-            Share a few lines about what you&apos;re dreaming of. A designer will reply within
-            24 hours with a private proposal — no templates, no call centres.
+            Tell us what you&apos;re imagining — a week in the Sahara desert, a cultural deep-dive
+            through Morocco&apos;s imperial cities, or a fully bespoke private tour from scratch.
+            A Morocco specialist responds within 24 hours with a tailored proposal.
+            No templates. No call centres. No obligation.
           </p>
 
           <div className="contact-info">
@@ -67,8 +69,8 @@ export default function Contact() {
             <div className="row">
               <div className="icon"><Icon.Clock /></div>
               <div>
-                <div className="k">Reply time</div>
-                <div className="v">Within 24 hours, always</div>
+                <div className="k">Response time</div>
+                <div className="v">Within 24 hours — guaranteed</div>
               </div>
             </div>
           </div>
@@ -78,7 +80,7 @@ export default function Contact() {
           {sent ? (
             <div className="form-success">
               <h3>Thank you, {form.name.split(' ')[0]}.</h3>
-              <p>Your request is on its way to our atelier in Marrakech. Expect a private proposal in your inbox within 24 hours.</p>
+              <p>Your request is with our Marrakech atelier. Expect a detailed, tailored Morocco travel proposal in your inbox within 24 hours — not a template, a genuine itinerary designed around you.</p>
               <div style={{ marginTop: 24 }}>
                 <button className="btn ghost" onClick={() => { setSent(false); setForm({ ...form, notes: '' }); }}>Send another</button>
               </div>
@@ -86,8 +88,8 @@ export default function Contact() {
           ) : (
             <form className="contact-form" onSubmit={submit}>
               <div className="form-head">
-                <h3>Request a proposal</h3>
-                <p>All fields confidential · no obligation</p>
+                <h3>Request Your Private Proposal</h3>
+                <p>Free consultation · Confidential · No obligation</p>
               </div>
 
               <div className="field-grid">
@@ -145,13 +147,13 @@ export default function Contact() {
                 <div className="field full">
                   <label>Tell us about your journey</label>
                   <textarea rows="3" value={form.notes} onChange={(e) => upd('notes', e.target.value)}
-                    placeholder="Occasions, pace, must-sees, rooms, anything we should know..."></textarea>
+                    placeholder="Occasions to celebrate, pace preference, must-see experiences, dietary needs, anything that matters to you..."></textarea>
                 </div>
               </div>
 
               <div className="submit-row">
-                <div className="fine">By submitting, you agree to be contacted by our team. We never share your details.</div>
-                <button type="submit" className="btn">Send Request <Icon.Arrow className="arrow" /></button>
+                <div className="fine">By submitting, you agree to be contacted by our specialist. We never share or sell your details.</div>
+                <button type="submit" className="btn">Send My Request <Icon.Arrow className="arrow" /></button>
               </div>
             </form>
           )}
