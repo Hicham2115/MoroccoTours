@@ -4,11 +4,14 @@
 import { useEffect, useState, Fragment } from "react";
 import Image from "next/image";
 import { Icon } from "./Icons";
+import { useLang } from "../lang/LangContext";
+import { translations } from "../lang/translations";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [lang, setLang] = useState("EN");
+  const { lang, setLang } = useLang();
+  const t = translations[lang].nav;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -17,13 +20,7 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const links = [
-    ["Destinations", "#destinations"],
-    ["Experiences", "#packages"],
-    ["About", "#about"],
-    ["Stories", "#testimonials"],
-    ["Contact", "#contact"],
-  ];
+  const links = t.links.map((label, i) => [label, t.hrefs[i]]);
 
   return (
     <>
@@ -39,7 +36,7 @@ export default function Nav() {
             />
             <div className="wordmark">
               <span className="main">Morocco Tours</span>
-              <span className="sub">Tours &amp; Travels</span>
+              <span className="sub">{t.tagline}</span>
             </div>
           </a>
 
@@ -66,7 +63,7 @@ export default function Nav() {
               ))}
             </div>
             <a href="#contact" className="btn hide-sm">
-              Book Now <Icon.Arrow className="arrow" />
+              {t.bookNow} <Icon.Arrow className="arrow" />
             </a>
             <button
               className={"burger " + (drawerOpen ? "open" : "")}
@@ -88,7 +85,7 @@ export default function Nav() {
           </a>
         ))}
         <a href="#contact" className="btn" onClick={() => setDrawerOpen(false)}>
-          Book Now
+          {t.bookNow}
         </a>
       </div>
     </>

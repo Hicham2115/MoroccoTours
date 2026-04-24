@@ -1,5 +1,13 @@
 // app/components/About.jsx
+"use client";
+
+import { useLang } from "../lang/LangContext";
+import { translations } from "../lang/translations";
+
 export default function About() {
+  const { lang } = useLang();
+  const t = translations[lang].about;
+
   return (
     <section className="about" id="about">
       <div className="container about-grid">
@@ -20,93 +28,32 @@ export default function About() {
         </div>
 
         <div className="about-body reveal">
-          <span className="eyebrow">Why Choose Us</span>
+          <span className="eyebrow">{t.eyebrow}</span>
           <h2 className="display">
-            Eighteen years <em>opening doors</em> in Morocco.
+            {t.h2[0]}<em>{t.h2[1]}</em>{t.h2[2]}
           </h2>
-          <p>
-            Morocco Tours was founded in Marrakech — born from a deep love of
-            the land, its people, and a conviction that exceptional travel is
-            something you design, not something you book off a shelf. We began
-            with a single vehicle, a network of trusted riad keepers, and the
-            belief that every journey should feel personal. Today we are
-            twenty-two: guides, designers, drivers, and hosts — all Moroccan,
-            all local, all working only with people and places we would invite
-            into our own homes.
-          </p>
-          <p>
-            We don&apos;t measure journeys in monuments. We measure them in
-            moments: the mint tea poured a second time unprompted, the afternoon
-            kept deliberately empty, the workshop door opened into a world no
-            guidebook mentions.
-          </p>
+          <p>{t.p1}</p>
+          <p>{t.p2}</p>
 
-          <div
-            className="dest-highlights"
-            style={{ marginTop: "2rem", marginBottom: "2rem" }}
-          >
-            <div className="h">
-              <div className="dot"></div>
-              <div className="text">
-                <strong>
-                  Fully private — your dates, your pace, your group only
-                </strong>
-                <span>
-                  No shared coaches. No strangers. Your journey is yours alone.
-                </span>
+          <div className="dest-highlights" style={{ marginTop: "2rem", marginBottom: "2rem" }}>
+            {t.bullets.map((b, i) => (
+              <div className="h" key={i}>
+                <div className="dot"></div>
+                <div className="text">
+                  <strong>{b.t}</strong>
+                  <span>{b.s}</span>
+                </div>
               </div>
-            </div>
-            <div className="h">
-              <div className="dot"></div>
-              <div className="text">
-                <strong>
-                  18 years of local relationships = access money alone
-                  can&apos;t buy
-                </strong>
-                <span>
-                  Doors that stay closed for everyone else open for our guests.
-                </span>
-              </div>
-            </div>
-            <div className="h">
-              <div className="dot"></div>
-              <div className="text">
-                <strong>
-                  Every property hand-inspected — we stay there ourselves
-                </strong>
-                <span>
-                  No surprises. Only riads and camps we would personally return
-                  to.
-                </span>
-              </div>
-            </div>
-            <div className="h">
-              <div className="dot"></div>
-              <div className="text">
-                <strong>
-                  End-to-end care, from inquiry to airport farewell
-                </strong>
-                <span>
-                  Transfers, guides, dining, permits — orchestrated so nothing
-                  interrupts you.
-                </span>
-              </div>
-            </div>
+            ))}
           </div>
 
           <div className="about-stats">
-            <div className="s">
-              <div className="num">12k+</div>
-              <div className="label">Guests guided</div>
-            </div>
-            <div className="s">
-              <div className="num">22</div>
-              <div className="label">Local specialists</div>
-            </div>
-            <div className="s">
-              <div className="num">98%</div>
-              <div className="label">Return requests</div>
-            </div>
+            {t.stats.map((s) => (
+              <div className="s" key={s.label}>
+                <div className="num">{s.num}</div>
+                <div className="label">{s.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

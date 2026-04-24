@@ -1,6 +1,9 @@
 // app/data.js
 export const HERO_SLIDES = [
-  { img: "/hero-1.jpg", label: "Merzouga · Erg Chebbi — Sahara Desert, Morocco" },
+  {
+    img: "/hero-1.jpg",
+    label: "Merzouga · Erg Chebbi — Sahara Desert, Morocco",
+  },
   { img: "/hero-2.jpg", label: "Chefchaouen · The Blue Pearl of the Rif" },
   { img: "/hero-3.jpg", label: "Draa Valley · Ancient Kasbahs at Dusk" },
   { img: "/hero-4.jpg", label: "Sahara · Golden Dune Ridges at Sunset" },
@@ -14,12 +17,15 @@ export const DESTINATIONS = [
     tagline: "The Red City · Imperial Heart",
     heading: "Where every hidden door leads somewhere extraordinary.",
     lede: "Lose yourself in the ochre labyrinth of Marrakech's ancient medina — a UNESCO World Heritage site where Jemaa el-Fnaa pulses with storytellers at dusk and saffron perfumes the morning air. Our private Marrakech excursions go beyond the surface: artisan workshops only locals know, rooftop dinners above the sea of minarets, and sunrise visits to sacred sites before the crowds arrive.",
-    img: "https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=1400&q=80",
+    img: "https://images.unsplash.com/photo-1570133435573-fcb96d98f69b?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     badge: "Heritage",
     days: "5 days",
     price: "1,290",
     highlights: [
-      { t: "Jemaa el-Fnaa", s: "Private evening with storytellers & gastronomy" },
+      {
+        t: "Jemaa el-Fnaa",
+        s: "Private evening with storytellers & gastronomy",
+      },
       { t: "Majorelle Garden", s: "Yves Saint Laurent's living legacy" },
       { t: "Private Riad Stay", s: "Hand-selected hidden courtyards" },
       { t: "Bahia Palace", s: "Moorish architecture — after hours" },
@@ -57,7 +63,10 @@ export const DESTINATIONS = [
     highlights: [
       { t: "Chouara Tanneries", s: "Private rooftop access — no crowds" },
       { t: "Al-Attarine Madrasa", s: "The Marinid dynasty's masterpiece" },
-      { t: "Artisan Workshops", s: "Zellige, brass & leather — meet the masters" },
+      {
+        t: "Artisan Workshops",
+        s: "Zellige, brass & leather — meet the masters",
+      },
       { t: "Bab Boujloud", s: "The Blue Gate — medina's living entrance" },
     ],
   },

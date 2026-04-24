@@ -4,9 +4,14 @@
 import { useState } from "react";
 import { DESTINATIONS } from "../data";
 import { Icon } from "./Icons";
+import { useLang } from "../lang/LangContext";
+import { translations } from "../lang/translations";
 
 export default function Destinations() {
   const [active, setActive] = useState(0);
+  const { lang } = useLang();
+  const t = translations[lang].destinations;
+  const td = t.data[active];
   const d = DESTINATIONS[active];
 
   return (
@@ -14,17 +19,12 @@ export default function Destinations() {
       <div className="container">
         <div className="section-head reveal">
           <div className="left">
-            <span className="eyebrow">Morocco Destinations</span>
+            <span className="eyebrow">{t.eyebrow}</span>
             <h2 className="display">
-              Five cities, <em>five worlds.</em>
+              {t.h2[0]}<em>{t.h2[1]}</em>
             </h2>
           </div>
-          <p className="right">
-            From the imperial medinas of Marrakech and Fez to the Sahara desert
-            gateway of Ouarzazate, the literary port of Tangier, and the
-            Atlantic shores of Agadir — each destination is a private chapter,
-            guided by locals who have lived it their entire lives.
-          </p>
+          <p className="right">{t.desc}</p>
         </div>
 
         <div className="dest-tabs reveal">
@@ -36,7 +36,7 @@ export default function Destinations() {
             >
               <div className="num">{dd.num} —</div>
               <div className="city-name">{dd.name}</div>
-              <div className="tagline">{dd.tagline}</div>
+              <div className="tagline">{t.data[i].tagline}</div>
             </button>
           ))}
         </div>
@@ -45,22 +45,22 @@ export default function Destinations() {
           <div className="dest-visual">
             <img src={d.img} alt={d.name} />
             <div className="frame"></div>
-            <div className="badge">{d.badge}</div>
+            <div className="badge">{td.badge}</div>
             <div className="meta-card">
-              <div className="k">Duration</div>
+              <div className="k">{t.duration}</div>
               <div className="v">{d.days}</div>
             </div>
           </div>
 
           <div className="dest-body">
             <span className="eyebrow">
-              {d.num} · {d.tagline}
+              {d.num} · {td.tagline}
             </span>
-            <h3>{d.heading}</h3>
-            <p className="lede">{d.lede}</p>
+            <h3>{td.heading}</h3>
+            <p className="lede">{td.lede}</p>
 
             <div className="dest-highlights">
-              {d.highlights.map((h, i) => (
+              {td.highlights.map((h, i) => (
                 <div className="h" key={i}>
                   <div className="dot"></div>
                   <div className="text">
@@ -72,12 +72,9 @@ export default function Destinations() {
             </div>
 
             <div className="dest-footer">
-              <div className="dest-pricing">
-                {/* <div className="from">From</div> */}
-                {/* <div className="price">€{d.price}<small>/ person</small></div> */}
-              </div>
+              <div className="dest-pricing"></div>
               <a href="#contact" className="btn">
-                Design This Journey <Icon.Arrow className="arrow" />
+                {t.designJourney} <Icon.Arrow className="arrow" />
               </a>
             </div>
           </div>

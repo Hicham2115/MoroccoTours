@@ -4,13 +4,17 @@
 import { useEffect, useState } from 'react';
 import { HERO_SLIDES } from '../data';
 import { Icon } from './Icons';
+import { useLang } from '../lang/LangContext';
+import { translations } from '../lang/translations';
 
 export default function Hero() {
   const [idx, setIdx] = useState(0);
+  const { lang } = useLang();
+  const t = translations[lang].hero;
 
   useEffect(() => {
-    const t = setInterval(() => setIdx((i) => (i + 1) % HERO_SLIDES.length), 6000);
-    return () => clearInterval(t);
+    const timer = setInterval(() => setIdx((i) => (i + 1) % HERO_SLIDES.length), 6000);
+    return () => clearInterval(timer);
   }, []);
 
   return (
@@ -28,23 +32,22 @@ export default function Hero() {
       <div className="hero-inner">
         <div className="container hero-grid">
           <div>
-            <span className="eyebrow">Private Morocco Tours · Expert-Crafted</span>
-            <h1 className="display">Morocco tours <em>crafted for those</em> who seek more.</h1>
-            <p className="hero-lede">
-              From the saffron-scented souks of Marrakech to the star-blanketed silence of the Sahara desert,
-              we design private Morocco tours for travellers who want every door opened, every moment considered,
-              and every memory earned — not purchased off a shelf.
-            </p>
+            <span className="eyebrow">{t.eyebrow}</span>
+            <h1 className="display">{t.h1[0]}<em>{t.h1[1]}</em>{t.h1[2]}</h1>
+            <p className="hero-lede">{t.lede}</p>
             <div className="hero-cta">
-              <a href="#contact" className="btn">Plan My Journey <Icon.Arrow className="arrow" /></a>
-              <a href="#packages" className="btn ghost">Explore Tours</a>
+              <a href="#contact" className="btn">{t.planJourney} <Icon.Arrow className="arrow" /></a>
+              <a href="#packages" className="btn ghost">{t.exploreTours}</a>
             </div>
           </div>
 
           <div className="hero-meta">
-            <div className="stat"><div className="num">18</div><div className="label">Years of expert craft</div></div>
-            <div className="stat"><div className="num">12k+</div><div className="label">Guests guided</div></div>
-            <div className="stat"><div className="num">4.9</div><div className="label">★ Verified rating</div></div>
+            {t.stats.map((s) => (
+              <div className="stat" key={s.label}>
+                <div className="num">{s.num}</div>
+                <div className="label">{s.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -56,7 +59,7 @@ export default function Hero() {
       </div>
 
       <div className="hero-scroll">
-        <span>Scroll</span>
+        <span>{t.scroll}</span>
         <div className="line"></div>
       </div>
     </section>

@@ -4,76 +4,70 @@
 import { useState } from "react";
 import { PACKAGES } from "../data";
 import { Icon } from "./Icons";
+import { useLang } from "../lang/LangContext";
+import { translations } from "../lang/translations";
+
+const FILTER_CATS = ["All", "Desert", "Mountains"];
 
 export default function Packages() {
-  const cats = ["All", "Desert", "Mountains"];
-  const [filter, setFilter] = useState("All");
-  const [favs, setFavs] = useState({});
+  const { lang } = useLang();
+  const t = translations[lang].packages;
+  const [catIdx, setCatIdx] = useState(0);
 
-  const filtered =
-    filter === "All" ? PACKAGES : PACKAGES.filter((p) => p.cat === filter);
+  const activeCat = FILTER_CATS[catIdx];
+  const filtered = activeCat === "All" ? PACKAGES : PACKAGES.filter((p) => p.cat === activeCat);
+  const pkgData = t.data;
 
   return (
     <section className="packages" id="packages">
       <div className="container">
         <div className="section-head reveal">
           <div className="left">
-            <span className="eyebrow">Morocco Travel Packages</span>
+            <span className="eyebrow">{t.eyebrow}</span>
             <h2 className="display">
-              Journeys, <em>authored for you.</em>
+              {t.h2[0]}<em>{t.h2[1]}</em>
             </h2>
           </div>
-          <p className="right">
-            Every Morocco travel package is a private commission — hand-picked
-            riads, expert local guides, and exclusive access reserved for our
-            travellers alone. Start with one of these signature itineraries, or
-            tell us your vision and we will design it from scratch.
-          </p>
+          <p className="right">{t.desc}</p>
         </div>
 
         <div className="pkg-filters reveal">
-          {cats.map((c) => (
+          {t.filters.map((label, i) => (
             <button
-              key={c}
-              className={"pkg-filter " + (filter === c ? "active" : "")}
-              onClick={() => setFilter(c)}
+              key={FILTER_CATS[i]}
+              className={"pkg-filter " + (catIdx === i ? "active" : "")}
+              onClick={() => setCatIdx(i)}
             >
-              {c}
+              {label}
             </button>
           ))}
         </div>
 
         <div className="pkg-grid">
-          {filtered.map((p) => (
-            <article key={p.id} className="pkg-card reveal">
-              <div className="pkg-img">
-                <img src={p.img} alt={p.title} />
-                <div className="duration">{p.duration}</div>
-                {/* <button
-                  className={"fav " + (favs[p.id] ? "active" : "")}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setFavs({ ...favs, [p.id]: !favs[p.id] });
-                  }}
-                  aria-label="Favorite"
-                >
-                  {favs[p.id] ? <Icon.HeartFill /> : <Icon.Heart />}
-                </button> */}
-              </div>
-              <div className="pkg-body">
-                <div className="route">{p.route}</div>
-                <h4>{p.title}</h4>
-                <p>{p.desc}</p>
-                <div className="pkg-meta">
-                  <div className="rating">
-                    <Icon.Star />
-                    <strong>{p.rating.toFixed(1)}</strong>
-                    <span className="count">({p.reviews})</span>
+          {filtered.map((p) => {
+            const originalIdx = PACKAGES.indexOf(p);
+            const td = pkgData[originalIdx];
+            return (
+              <article key={p.id} className="pkg-card reveal">
+                <div className="pkg-img">
+                  <img src={p.img} alt={p.title} />
+                  <div className="duration">{p.duration}</div>
+                </div>
+                <div className="pkg-body">
+                  <div className="route">{p.route}</div>
+                  <h4>{td?.title ?? p.title}</h4>
+                  <p>{td?.desc ?? p.desc}</p>
+                  <div className="pkg-meta">
+                    <div className="rating">
+                      <Icon.Star />
+                      <strong>{p.rating.toFixed(1)}</strong>
+                      <span className="count">({p.reviews})</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
