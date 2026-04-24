@@ -24,9 +24,10 @@ export default function Packages() {
             </h2>
           </div>
           <p className="right">
-            Every Morocco travel package is a private commission — hand-picked riads, expert local guides,
-            and exclusive access reserved for our travellers alone. Start with one of these signature
-            itineraries, or tell us your vision and we will design it from scratch.
+            Every Morocco travel package is a private commission — hand-picked
+            riads, expert local guides, and exclusive access reserved for our
+            travellers alone. Start with one of these signature itineraries, or
+            tell us your vision and we will design it from scratch.
           </p>
         </div>
 
@@ -48,7 +49,7 @@ export default function Packages() {
               <div className="pkg-img">
                 <img src={p.img} alt={p.title} />
                 <div className="duration">{p.duration}</div>
-                <button
+                {/* <button
                   className={"fav " + (favs[p.id] ? "active" : "")}
                   onClick={(e) => {
                     e.stopPropagation();
@@ -57,7 +58,7 @@ export default function Packages() {
                   aria-label="Favorite"
                 >
                   {favs[p.id] ? <Icon.HeartFill /> : <Icon.Heart />}
-                </button>
+                </button> */}
               </div>
               <div className="pkg-body">
                 <div className="route">{p.route}</div>
@@ -68,10 +69,6 @@ export default function Packages() {
                     <Icon.Star />
                     <strong>{p.rating.toFixed(1)}</strong>
                     <span className="count">({p.reviews})</span>
-                  </div>
-                  <div className="price">
-                    €{p.price}
-                    <small> / pp</small>
                   </div>
                 </div>
               </div>

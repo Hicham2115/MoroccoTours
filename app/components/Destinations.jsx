@@ -1,9 +1,9 @@
 // app/components/Destinations.jsx
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { DESTINATIONS } from '../data';
-import { Icon } from './Icons';
+import { useState } from "react";
+import { DESTINATIONS } from "../data";
+import { Icon } from "./Icons";
 
 export default function Destinations() {
   const [active, setActive] = useState(0);
@@ -15,12 +15,15 @@ export default function Destinations() {
         <div className="section-head reveal">
           <div className="left">
             <span className="eyebrow">Morocco Destinations</span>
-            <h2 className="display">Five cities, <em>five worlds.</em></h2>
+            <h2 className="display">
+              Five cities, <em>five worlds.</em>
+            </h2>
           </div>
           <p className="right">
-            From the imperial medinas of Marrakech and Fez to the Sahara desert gateway of Ouarzazate,
-            the literary port of Tangier, and the Atlantic shores of Agadir — each destination is a private
-            chapter, guided by locals who have lived it their entire lives.
+            From the imperial medinas of Marrakech and Fez to the Sahara desert
+            gateway of Ouarzazate, the literary port of Tangier, and the
+            Atlantic shores of Agadir — each destination is a private chapter,
+            guided by locals who have lived it their entire lives.
           </p>
         </div>
 
@@ -28,7 +31,7 @@ export default function Destinations() {
           {DESTINATIONS.map((dd, i) => (
             <button
               key={dd.id}
-              className={'dest-tab ' + (i === active ? 'active' : '')}
+              className={"dest-tab " + (i === active ? "active" : "")}
               onClick={() => setActive(i)}
             >
               <div className="num">{dd.num} —</div>
@@ -50,7 +53,9 @@ export default function Destinations() {
           </div>
 
           <div className="dest-body">
-            <span className="eyebrow">{d.num} · {d.tagline}</span>
+            <span className="eyebrow">
+              {d.num} · {d.tagline}
+            </span>
             <h3>{d.heading}</h3>
             <p className="lede">{d.lede}</p>
 
@@ -68,10 +73,12 @@ export default function Destinations() {
 
             <div className="dest-footer">
               <div className="dest-pricing">
-                <div className="from">From</div>
-                <div className="price">€{d.price}<small>/ person</small></div>
+                {/* <div className="from">From</div> */}
+                {/* <div className="price">€{d.price}<small>/ person</small></div> */}
               </div>
-              <a href="#contact" className="btn">Design This Journey <Icon.Arrow className="arrow" /></a>
+              <a href="#contact" className="btn">
+                Design This Journey <Icon.Arrow className="arrow" />
+              </a>
             </div>
           </div>
         </div>
