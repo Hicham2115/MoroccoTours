@@ -3,6 +3,7 @@
 
 import { useState } from 'react';
 import { Icon } from './Icons';
+import DatePicker from './DatePicker';
 import { useLang } from '../lang/LangContext';
 import { translations } from '../lang/translations';
 
@@ -127,7 +128,13 @@ export default function Contact() {
                 </div>
                 <div className="field">
                   <label>{tf.startDate}</label>
-                  <input type="date" value={form.start} onChange={(e) => upd('start', e.target.value)} />
+                  <DatePicker
+                    value={form.start}
+                    onChange={(v) => upd('start', v)}
+                    lang={lang}
+                    placeholder={tf.startDate}
+                    hasError={!!errs.start}
+                  />
                   {errs.start && <div className="err">{errs.start}</div>}
                 </div>
                 <div className="field">

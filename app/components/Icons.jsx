@@ -64,5 +64,21 @@ export const Icon = {
     <svg viewBox="0 0 24 24" fill="currentColor" {...p}>
       <path d="M18.244 2H21l-6.5 7.43L22 22h-6.832l-4.78-6.26L4.8 22H2.044l7.047-8.054L2 2h6.976l4.329 5.74L18.244 2zm-2.39 18h1.87L7.235 4H5.236l10.618 16z" />
     </svg>
+  ),
+  Calendar: (p) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" {...p}>
+      <rect x="3" y="5" width="18" height="16" rx="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M3 10h18M8 3v4M16 3v4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  ChevronLeft: (p) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" {...p}>
+      <path d="M15 6l-6 6 6 6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  ChevronRight: (p) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" {...p}>
+      <path d="M9 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   )
 };

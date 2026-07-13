@@ -1255,6 +1255,25 @@ section {
 .field textarea:focus {
   border-bottom-color: var(--gold);
 }
+.field input:hover,
+.field textarea:hover {
+  border-bottom-color: rgba(11, 11, 11, 0.35);
+}
+.field input[type="date"] {
+  cursor: pointer;
+}
+.field input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+  filter: invert(66%) sepia(45%) saturate(650%) hue-rotate(2deg) brightness(94%);
+  transition: opacity 0.3s ease;
+}
+.field input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+.field input[type="date"]::-webkit-datetime-edit {
+  color: var(--black);
+}
 .field textarea {
   resize: vertical;
   min-height: 80px;
@@ -1264,15 +1283,174 @@ section {
 .field select {
   cursor: pointer;
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%23C5A029' fill='none' stroke-width='1.5'/></svg>")
     no-repeat right center;
-  padding-right: 20px;
+  padding-right: 24px;
+  border-radius: 0;
+  transition: border-color 0.3s ease, background-position 0.3s ease;
+}
+.field select:hover {
+  border-bottom-color: rgba(197, 160, 41, 0.6);
+}
+.field select:focus {
+  background-position: right -2px center;
+}
+.field select option {
+  background: #fff;
+  color: var(--black);
+  font-family: var(--sans);
+  font-size: 14px;
 }
 .field .err {
   font-size: 11px;
   color: #b43;
   margin-top: 6px;
+}
+
+/* ---------- DATEPICKER ---------- */
+.datepicker {
+  position: relative;
+}
+.datepicker-input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(11, 11, 11, 0.2);
+  background: transparent;
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--black);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.3s ease;
+}
+.datepicker-input:hover {
+  border-bottom-color: rgba(197, 160, 41, 0.6);
+}
+.datepicker.open .datepicker-input,
+.datepicker-input:focus {
+  border-bottom-color: var(--gold);
+}
+.datepicker-input.err {
+  border-bottom-color: #b43;
+}
+.datepicker-input .placeholder {
+  color: rgba(11, 11, 11, 0.35);
+  font-size: 16px;
+}
+.datepicker-input svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: var(--gold);
+  opacity: 0.75;
+}
+
+.datepicker-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  z-index: 20;
+  width: 300px;
+  background: #fff;
+  border: 1px solid rgba(11, 11, 11, 0.08);
+  box-shadow: 0 30px 60px -20px rgba(11, 11, 11, 0.35);
+  padding: 20px;
+  animation: dpIn 0.2s ease;
+}
+@keyframes dpIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.datepicker-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.datepicker-head span {
+  font-family: var(--serif);
+  font-size: 16px;
+  letter-spacing: -0.01em;
+}
+.datepicker-head button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(11, 11, 11, 0.12);
+  background: transparent;
+  color: var(--black);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.datepicker-head button:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.datepicker-head button svg {
+  width: 14px;
+  height: 14px;
+}
+.datepicker-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 4px;
+}
+.datepicker-weekdays span {
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(11, 11, 11, 0.4);
+  padding: 6px 0;
+}
+.datepicker-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+.datepicker-grid .day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--black);
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.datepicker-grid .day:hover {
+  background: rgba(197, 160, 41, 0.12);
+}
+.datepicker-grid .day.muted {
+  color: rgba(11, 11, 11, 0.28);
+}
+.datepicker-grid .day.today {
+  color: var(--gold);
+  font-weight: 600;
+}
+.datepicker-grid .day.selected {
+  background: var(--gold);
+  color: #fff;
+  font-weight: 600;
 }
 
 .travelers {
