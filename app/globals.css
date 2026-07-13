@@ -740,6 +740,9 @@ section {
   background: var(--ivory);
   color: var(--black);
 }
+.packages .section-head .right {
+  color: rgba(11, 11, 11, 0.7);
+}
 .pkg-filters {
   display: flex;
   gap: 8px;
