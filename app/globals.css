@@ -45,9 +45,30 @@
   margin: 0;
   padding: 0;
 }
+
 html {
-  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) var(--black);
 }
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold-deep);
+  border: 3px solid var(--black);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+::-webkit-scrollbar-corner {
+  background: var(--black);
+}
+
 body {
   background: var(--black);
   color: var(--ivory);

@@ -2,6 +2,7 @@
 import { Cormorant_Garamond, Inter } from 'next/font/google';
 import './globals.css';
 import RevealObserver from './components/RevealObserver';
+import LenisProvider from './components/LenisProvider';
 import { LangProvider } from './lang/LangContext';
 
 const serif = Cormorant_Garamond({
@@ -78,8 +79,10 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <LangProvider>
-          <RevealObserver />
-          {children}
+          <LenisProvider>
+            <RevealObserver />
+            {children}
+          </LenisProvider>
         </LangProvider>
       </body>
     </html>
