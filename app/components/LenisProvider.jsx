@@ -8,6 +8,7 @@ export default function LenisProvider({ children }) {
   useEffect(() => {
     const lenis = new Lenis({
       autoRaf: true,
+      anchors: true,
     });
     return () => lenis.destroy();
   }, []);
